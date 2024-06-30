@@ -12,10 +12,10 @@ module.exports = {
     filename: '[name].[contenthash:8].js',
   },
   resolve: {
+    extensions: ['.jsx', '...'],
     alias: {
       '@images': path.resolve(__dirname, 'src/assets/images'),
     },
-    extensions: ['.jsx', '...'],
   },
   module: {
     rules: [
@@ -38,7 +38,7 @@ module.exports = {
                 maxSize: 10000,
               },
             },
-          }
+          },
         ],
       },
     ],
