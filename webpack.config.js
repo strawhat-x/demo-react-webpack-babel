@@ -4,14 +4,16 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  entry: './src/index.jsx',
+  entry: {
+    app: path.resolve(__dirname, 'src/index.jsx'),
+  },
   output: {
-    filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
+    filename: '[name].[contenthash:8].js',
   },
   resolve: {
     alias: {
-      '@images': path.resolve(__dirname, '/src/assets/images'),
+      '@images': path.resolve(__dirname, 'src/assets/images'),
     },
     extensions: ['.jsx', '...'],
   },
@@ -29,18 +31,14 @@ module.exports = {
             use: ['style-loader', 'css-loader'],
           },
           {
-            test: /\.(bmp|gif|jpe?g|png)$/,
+            test: /\.(png|jpe?g|svg|gif)$/,
             type: 'asset',
             parser: {
               dataUrlCondition: {
                 maxSize: 10000,
               },
             },
-          },
-          {
-            exclude: [/^$/, /\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
-            type: 'asset/resource',
-          },
+          }
         ],
       },
     ],
@@ -48,9 +46,9 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
-      template: 'index.html',
-      title: 'Webpack Babel React',
       filename: 'index.html',
+      template: 'index.html',
+      title: 'React Webpack Babel',
     }),
   ],
 };
