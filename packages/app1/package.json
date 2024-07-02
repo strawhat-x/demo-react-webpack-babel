@@ -1,0 +1,12 @@
+{
+  "name": "app1",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "webpack --config webpack.config",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

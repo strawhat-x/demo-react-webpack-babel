@@ -24,7 +24,10 @@ module.exports = {
           {
             test: /\.(js|jsx|ts|tsx)$/,
             loader: 'babel-loader',
-            include: path.resolve(__dirname, 'src')
+            include: path.resolve(__dirname, 'src'),
+            options: {
+              rootMode: 'upward',
+            }
           },
           {
             test: /\.css$/,
