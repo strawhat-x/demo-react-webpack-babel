@@ -4,8 +4,6 @@
   "description": "A demo of initial a react project with webpack and babel.",
   "main": "src/index.jsx",
   "scripts": {
-    "start": "webpack serve --mode development",
-    "buildApp1": "webpack --config packages/app1/webpack.config",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
